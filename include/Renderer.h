@@ -1,12 +1,14 @@
 
 #pragma once
 
+#define GLM_ENABLE_EXPERIMENTAL
+
 #include <functional>
 #include <vector>
 #include <string>
 
-#include "GL\glew.h"
-#include "GLFW\glfw3.h"
+#include "GL/glew.h"
+#include "GLFW/glfw3.h"
 
 #include "imgui.h"
 #include "imgui_impl_opengl3.h"

@@ -68,7 +68,7 @@ shared_ptr<LasFile> loadLas(string path){
 			header.numPoints = buffer_header->get<uint64_t>(247);
 		}
 
-		header.numPoints = min(header.numPoints, 1'000'000'000ll);
+		header.numPoints = min(header.numPoints, INT64_C(1'000'000'000));
 
 		header.offsetToPointData = buffer_header->get<uint32_t>(96);
 		header.pointFormat = buffer_header->get<uint8_t>(104) % 128;

@@ -325,7 +325,7 @@ struct VoxelTreeGen{
 			Box box;
 			box.min = lasfile->header.boxMin;
 			box.max = lasfile->header.boxMax;
-			string path = "G:/temp/test";
+			string path = "test";
 			OctreeWriter writer(path, box, &buffer, numNodes, ptr_buffer, ptrNodes);
 			writer.write();
 		}
@@ -460,7 +460,7 @@ struct VoxelTreeGen{
 			string devicename = props.name;
 
 
-			string formatString = R"V0G0N(
+			constexpr string_view formatString = R"V0G0N(
 		{{
 			"datetime": "{}",
 			"device": "{}",

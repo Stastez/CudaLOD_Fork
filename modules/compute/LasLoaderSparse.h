@@ -1,4 +1,6 @@
 
+#define GLM_ENABLE_EXPERIMENTAL
+
 #pragma once
 
 #include <string>
@@ -12,7 +14,7 @@
 #include "Shader.h"
 #include "Resources.h"
 #include "TaskPool.h"
-#include "laszip_api.h"
+#include "laszip/laszip_api.h"
 
 using namespace std;
 using glm::vec3;

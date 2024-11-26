@@ -88,161 +88,163 @@ int main(){
 	
 	 unordered_map<string, Setting> settings;
 	
-	// RETZ
-	settings["retz"] = {
-		// .path_las = "E:/dev/pointclouds/riegl/Retz_Airborne_Terrestrial_Combined_1cm.las",
-		.path_las = "D:/dev/pointclouds/Riegl/retz.las",
-		.yaw = 6.91,
-		.pitch = -0.78,
-	};
-
-	// LION
-	settings["lion"] = {
-		// .path_las = "E:/dev/pointclouds/mschuetz/lion.las",
-		.path_las = "D:/dev/pointclouds/mschuetz/lion.las",
-		.yaw = 6.74,
-		.pitch = -0.48,
-	};
-
-	// HEIDENTOR
-	settings["heidentor"] = {
-		 .path_las = "D:/dev/pointclouds/archpro/heidentor.las",
-		//.path_las = "E:/dev/pointclouds/archpro/heidentor.las",
-		.yaw = 6.65,
-		.pitch = -0.71,
-	};
-	
-	// CA13
-	settings["ca13_tile"] = {
-		.path_las = "E:/dev/pointclouds/opentopography/CA13_moro_area/ot_35120D7314D_1_1.las",
-		.yaw = 0.53,
-		.pitch = -0.68,
-		.radius = 614.70,
-		.target = { 0.0, 0.0, 0.0},
-	};
-
-	// Eclepens
-	settings["eclepens"] = {
-		// .path_las = "E:/dev/pointclouds/pix4d/eclepens.las",
-		.path_las = "D:/dev/pointclouds/pix4d/eclepens.las",
-		.yaw = 6.65,
-		.pitch = -0.71,
-		.radius = 1109.77,
-		.target = {514.05, 475.84, -156.43},
-	};
-
-	// Tires
-	settings["tires"] = {
-		.path_las = "E:/dev/pointclouds/tyres.las",
-		// .yaw = 6.65,
-		// .pitch = -0.71,
-		// .radius = 1109.77,
-		// .target = {514.05, 475.84, -156.43},
-	};
-
-	// Lifeboat
-	settings["lifeboat"] = {
-		.path_las = "D:/dev/pointclouds/weiss/pos8_lifeboats.las",
-		.yaw = -1.91,
-		.pitch = -0.32,
-		.radius = 16.75,
-		.target = {9.76, 7.62, 3.82},
-	};
-
-	// MORRO BAY
-	settings["morrobay_morton"] = {
-		.path_las = "F:/temp/wgtest/morro_bay/morro_bay_278M_morton.las",
-		.yaw = -0.15,
-		.pitch = -0.57,
-		.radius = 3166.32,
-		.target = {2239.05, 1713.63, -202.02},
-	};
-
-	// SaintRoman_0
-	settings["SaintRoman_0"] = {
-		.path_las = "D:/dev/pointclouds/iconem/SaintRoman_cleaned_1094M_202003_halved.las",
-		.yaw = 2.11,
-		.pitch = -0.54,
-		.radius = 72.99,
-		.target = {26.86, 68.42, -0.07},
-	};
-
-	// SaintRoman_1
-	settings["SaintRoman_1"] = {
-		.path_las = "D:/dev/pointclouds/iconem/SaintRoman_cleaned_1094M_202003_halved.las",
-		.yaw = -0.90,
-		.pitch = -0.24,
-		.radius = 7.41,
-		.target = {21.87, 67.85, 16.95},
-	};
-
-	// SaintRoman_2
-	settings["SaintRoman_2"] = {
-		.path_las = "D:/dev/pointclouds/iconem/SaintRoman_cleaned_1094M_202003_halved.las",
-		.yaw = -0.71,
-		.pitch = 0.05,
-		.radius = 5.57,
-		.target = {36.90, 75.39, 17.30},
-	};
-
-	// Palmyra_BelTemple_0
-	settings["Palmyra_BelTemple_0"] = {
-		.path_las = "D:/dev/pointclouds/iconem/Palmyra_2022rework_BelTemple_2016.las",
-		.yaw = 0.90,
-		.pitch = -0.72,
-		.radius = 319.32,
-		.target = {174.29, 129.37, -44.03},
-	};
-
-	// Palmyra_BelTemple_1
-	settings["Palmyra_BelTemple_1"] = {
-		.path_las = "D:/dev/pointclouds/iconem/Palmyra_2022rework_BelTemple_2016.las",
-		.yaw = 1.50,
-		.pitch = 0.18,
-		.radius = 24.36,
-		.target = {164.82, 158.33, 24.33},
-	};
-
-	// CA21_Bunds
-	settings["CA21_Bunds"] = {
-		.path_las = "D:/dev/pointclouds/iconem/CA21_bunds_9_to_14.las",
-	};
-	
-	// TU Projekt
-	settings["tu_projekt"] = {
-		.path_las = "D:/dev/pointclouds/tu_project/tu_projekt_every_2nd.las",
-		//.yaw = 1.50,
-		//.pitch = 0.18,
-		//.radius = 24.36,
-		//.target = {164.82, 158.33, 24.33},
-	};
-
-	// CA13_two_tiles
-	settings["CA13_two_tiles"] = {
-		.path_las = "D:/dev/pointclouds/ca13_2_tiles.las",
-		//.yaw = 1.50,
-		//.pitch = 0.18,
-		//.radius = 24.36,
-		//.target = {164.82, 158.33, 24.33},
-	};
-
-	// testdata
-	settings["test_checkerboard"] = {
-		.path_las = "D:/dev/pointclouds/cudalod_evaluation/generated.las",
-		//.yaw = 1.50,
-		//.pitch = 0.18,
-		//.radius = 24.36,
-		//.target = {164.82, 158.33, 24.33},
-	};
+	// // RETZ
+	// settings["retz"] = {
+	// 	// .path_las = "E:/dev/pointclouds/riegl/Retz_Airborne_Terrestrial_Combined_1cm.las",
+	// 	.path_las = "D:/dev/pointclouds/Riegl/retz.las",
+	// 	.yaw = 6.91,
+	// 	.pitch = -0.78,
+	// };
+	//
+	// // LION
+	// settings["lion"] = {
+	// 	// .path_las = "E:/dev/pointclouds/mschuetz/lion.las",
+	// 	.path_las = "D:/dev/pointclouds/mschuetz/lion.las",
+	// 	.yaw = 6.74,
+	// 	.pitch = -0.48,
+	// };
+	//
+	// // HEIDENTOR
+	// settings["heidentor"] = {
+	// 	 .path_las = "D:/dev/pointclouds/archpro/heidentor.las",
+	// 	//.path_las = "E:/dev/pointclouds/archpro/heidentor.las",
+	// 	.yaw = 6.65,
+	// 	.pitch = -0.71,
+	// };
+	//
+	// // CA13
+	// settings["ca13_tile"] = {
+	// 	.path_las = "E:/dev/pointclouds/opentopography/CA13_moro_area/ot_35120D7314D_1_1.las",
+	// 	.yaw = 0.53,
+	// 	.pitch = -0.68,
+	// 	.radius = 614.70,
+	// 	.target = { 0.0, 0.0, 0.0},
+	// };
+	//
+	// // Eclepens
+	// settings["eclepens"] = {
+	// 	// .path_las = "E:/dev/pointclouds/pix4d/eclepens.las",
+	// 	.path_las = "D:/dev/pointclouds/pix4d/eclepens.las",
+	// 	.yaw = 6.65,
+	// 	.pitch = -0.71,
+	// 	.radius = 1109.77,
+	// 	.target = {514.05, 475.84, -156.43},
+	// };
+	//
+	// // Tires
+	// settings["tires"] = {
+	// 	.path_las = "E:/dev/pointclouds/tyres.las",
+	// 	// .yaw = 6.65,
+	// 	// .pitch = -0.71,
+	// 	// .radius = 1109.77,
+	// 	// .target = {514.05, 475.84, -156.43},
+	// };
+	//
+	// // Lifeboat
+	// settings["lifeboat"] = {
+	// 	.path_las = "D:/dev/pointclouds/weiss/pos8_lifeboats.las",
+	// 	.yaw = -1.91,
+	// 	.pitch = -0.32,
+	// 	.radius = 16.75,
+	// 	.target = {9.76, 7.62, 3.82},
+	// };
+	//
+	// // MORRO BAY
+	// settings["morrobay_morton"] = {
+	// 	.path_las = "F:/temp/wgtest/morro_bay/morro_bay_278M_morton.las",
+	// 	.yaw = -0.15,
+	// 	.pitch = -0.57,
+	// 	.radius = 3166.32,
+	// 	.target = {2239.05, 1713.63, -202.02},
+	// };
+	//
+	// // SaintRoman_0
+	// settings["SaintRoman_0"] = {
+	// 	.path_las = "D:/dev/pointclouds/iconem/SaintRoman_cleaned_1094M_202003_halved.las",
+	// 	.yaw = 2.11,
+	// 	.pitch = -0.54,
+	// 	.radius = 72.99,
+	// 	.target = {26.86, 68.42, -0.07},
+	// };
+	//
+	// // SaintRoman_1
+	// settings["SaintRoman_1"] = {
+	// 	.path_las = "D:/dev/pointclouds/iconem/SaintRoman_cleaned_1094M_202003_halved.las",
+	// 	.yaw = -0.90,
+	// 	.pitch = -0.24,
+	// 	.radius = 7.41,
+	// 	.target = {21.87, 67.85, 16.95},
+	// };
+	//
+	// // SaintRoman_2
+	// settings["SaintRoman_2"] = {
+	// 	.path_las = "D:/dev/pointclouds/iconem/SaintRoman_cleaned_1094M_202003_halved.las",
+	// 	.yaw = -0.71,
+	// 	.pitch = 0.05,
+	// 	.radius = 5.57,
+	// 	.target = {36.90, 75.39, 17.30},
+	// };
+	//
+	// // Palmyra_BelTemple_0
+	// settings["Palmyra_BelTemple_0"] = {
+	// 	.path_las = "D:/dev/pointclouds/iconem/Palmyra_2022rework_BelTemple_2016.las",
+	// 	.yaw = 0.90,
+	// 	.pitch = -0.72,
+	// 	.radius = 319.32,
+	// 	.target = {174.29, 129.37, -44.03},
+	// };
+	//
+	// // Palmyra_BelTemple_1
+	// settings["Palmyra_BelTemple_1"] = {
+	// 	.path_las = "D:/dev/pointclouds/iconem/Palmyra_2022rework_BelTemple_2016.las",
+	// 	.yaw = 1.50,
+	// 	.pitch = 0.18,
+	// 	.radius = 24.36,
+	// 	.target = {164.82, 158.33, 24.33},
+	// };
+	//
+	// // CA21_Bunds
+	// settings["CA21_Bunds"] = {
+	// 	.path_las = "D:/dev/pointclouds/iconem/CA21_bunds_9_to_14.las",
+	// };
+	//
+	// // TU Projekt
+	// settings["tu_projekt"] = {
+	// 	.path_las = "D:/dev/pointclouds/tu_project/tu_projekt_every_2nd.las",
+	// 	//.yaw = 1.50,
+	// 	//.pitch = 0.18,
+	// 	//.radius = 24.36,
+	// 	//.target = {164.82, 158.33, 24.33},
+	// };
+	//
+	// // CA13_two_tiles
+	// settings["CA13_two_tiles"] = {
+	// 	.path_las = "D:/dev/pointclouds/ca13_2_tiles.las",
+	// 	//.yaw = 1.50,
+	// 	//.pitch = 0.18,
+	// 	//.radius = 24.36,
+	// 	//.target = {164.82, 158.33, 24.33},
+	// };
+	//
+	// // testdata
+	// settings["test_checkerboard"] = {
+	// 	.path_las = "D:/dev/pointclouds/cudalod_evaluation/generated.las",
+	// 	//.yaw = 1.50,
+	// 	//.pitch = 0.18,
+	// 	//.radius = 24.36,
+	// 	//.target = {164.82, 158.33, 24.33},
+	// };
 
 
 
 	{// WHATEVER
 		Setting setting;
 		// setting.path_las = "F:/temp/wgtest/morro_bay/morro_bay_278M_morton.las"; 
-		setting.path_las = "D:/dev/pointclouds/tuwien_baugeschichte/candi Sari/photoscan19_exterior - POLYDATA - photoscan19_exterior.las"; 
-		setting.path_las = "D:/dev/pointclouds/sitn/mobile_2561500_1204500.las"; 
-		setting.path_las = "D:/dev/pointclouds/Riegl/subset.las"; 
+		// setting.path_las = "D:/dev/pointclouds/tuwien_baugeschichte/candi Sari/photoscan19_exterior - POLYDATA - photoscan19_exterior.las";
+		// setting.path_las = "D:/dev/pointclouds/sitn/mobile_2561500_1204500.las";
+		// setting.path_las = "D:/dev/pointclouds/Riegl/subset.las";
+
+		setting.path_las = R"(./resources/points.las)";
 
 		settings["whatever"] = setting;
 	}
@@ -255,7 +257,7 @@ int main(){
 	// Setting setting = settings["lion"];
 	// Setting setting = settings["Palmyra_BelTemple_0"];
 	// Setting setting = settings["SaintRoman_2"];
-	Setting setting = settings["eclepens"];
+	Setting setting = settings["whatever"];
 
 	if(setting.radius == 0.0)
 	{ // override camera pos with sensible default

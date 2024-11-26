@@ -67,7 +67,7 @@ struct ComputeLasData : public Resource {
 		}
 
 		//numPoints = min(numPoints, 50'000'000ll);
-		numPoints = min(numPoints, 1'000'000'000ll);
+		numPoints = min(numPoints, INT64_C(1'000'000'000));
 		// 1'073'741'824
 
 		data->offsetToPointData = buffer_header->get<uint32_t>(96);

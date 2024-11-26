@@ -130,7 +130,7 @@ void Renderer::init(){
 		const GLFWvidmode * modeLeft = glfwGetVideoMode(monitors[0]);
 		const GLFWvidmode * modeRight = glfwGetVideoMode(monitors[1]);
 
-		window = glfwCreateWindow(modeRight->width, modeRight->height - 300, "Simple example", nullptr, nullptr);
+		window = glfwCreateWindow(modeRight->width, modeLeft->height - 300, "Simple example", nullptr, nullptr);
 
 		if (!window) {
 			glfwTerminate();
@@ -139,7 +139,7 @@ void Renderer::init(){
 
 		int xpos;
 		int ypos;
-		glfwGetMonitorPos(monitors[1], &xpos, &ypos);
+		glfwGetMonitorPos(monitors[0], &xpos, &ypos);
 
 		glfwSetWindowPos(window, xpos, ypos);
 	} 
@@ -414,8 +414,9 @@ void Renderer::loop(function<void(void)> update, function<void(void)> render){
 			s60fps.AddPoint(t, 1000.0f / 60.0f);
 			s120fps.AddPoint(t, 1000.0f / 120.0f);
 			static ImPlotAxisFlags rt_axis = ImPlotAxisFlags_NoTickLabels;
-			ImPlot::SetNextPlotLimitsX(t - history, t, ImGuiCond_Always);
-			ImPlot::SetNextPlotLimitsY(0, 30, ImGuiCond_Always);
+			// ImPlot::SetNextPlotLimitsX(t - history, t, ImGuiCond_Always);
+			// ImPlot::SetNextPlotLimitsY(0, 30, ImGuiCond_Always);
+			ImPlot::SetNextAxesLimits(t - history, t, 0, 30, ImGuiCond_Always);
 
 			if (ImPlot::BeginPlot("Timings", nullptr, nullptr, ImVec2(-1, 200))){
 
@@ -584,7 +585,7 @@ void Renderer::loop(function<void(void)> update, function<void(void)> render){
 
 				string str = ss.str();
 				
-				toClipboard(str);
+				// toClipboard(str);
 			}
 
 			// if (ImGui::Button("copy vr matrices")) {

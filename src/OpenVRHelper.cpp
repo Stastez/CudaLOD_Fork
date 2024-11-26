@@ -57,7 +57,7 @@ void OpenVRHelper::submit(unsigned int left, unsigned int right) {
 }
 
 void OpenVRHelper::submit(unsigned int texture, EVREye eye) {
-	Texture_t tex = { (void*)texture, vr::API_OpenGL, vr::ColorSpace_Gamma };
+	Texture_t tex = { (void*)texture, vr::TextureType_OpenGL, vr::ColorSpace_Gamma };
 
 	vr::VRTextureBounds_t *bounds = (vr::VRTextureBounds_t*)0;
 	auto flags = vr::EVRSubmitFlags::Submit_Default;
@@ -70,7 +70,7 @@ void OpenVRHelper::submitDistortionApplied(unsigned int left, unsigned int right
 }
 
 void OpenVRHelper::submitDistortionApplied(unsigned int texture, EVREye eye) {
-	Texture_t tex = { (void*)texture, vr::API_OpenGL, vr::ColorSpace_Gamma };
+	Texture_t tex = { (void*)texture, vr::TextureType_OpenGL, vr::ColorSpace_Gamma };
 
 	vr::VRTextureBounds_t *bounds = (vr::VRTextureBounds_t*)0;
 	auto flags = vr::Submit_LensDistortionAlreadyApplied;
