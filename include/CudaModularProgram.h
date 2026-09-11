@@ -14,6 +14,7 @@ struct CudaModule{
 	void cu_checked(CUresult result){
 		if(result != CUDA_SUCCESS){
 			cout << "cuda error code: " << result << endl;
+			std::exit(1);
 		}
 	};
 
@@ -61,7 +62,7 @@ struct CudaModule{
 			cuda_include.c_str(),
 			"--relocatable-device-code=true",
 			"-default-device",
-			"-dlto", 
+			// "-dlto", // not compatible with PTX?
 			// "--dopt=on",
 			"--std=c++17"
 		};
@@ -82,14 +83,16 @@ struct CudaModule{
 			return;
 		}
 
-		if(nvvmSize > 0){
-			delete[] nvvm;
-			nvvmSize = 0;
+		if(ptxSize > 0){
+			delete[] ptx;
+			ptxSize = 0;
 		}
 
-		nvrtcGetNVVMSize(prog, &nvvmSize);
-		nvvm = new char[nvvmSize];
-		nvrtcGetNVVM(prog, nvvm);
+		nvrtcGetPTXSize(prog, &ptxSize);
+		// nvrtcGetNVVMSize(prog, &nvvmSize);
+		ptx = new char[ptxSize];
+		// nvrtcGetNVVM(prog, nvvm);
+		nvrtcGetPTX(prog, ptx);
 		// Destroy the program.
 		nvrtcDestroyProgram(&prog);
 
@@ -113,6 +116,12 @@ struct CudaModularProgram{
 	void cu_checked(CUresult result){
 		if(result != CUDA_SUCCESS){
 			cout << "cuda error code: " << result << endl;
+			std::exit(1);
+		}
+
+		if (result == CUDA_ERROR_JIT_COMPILER_NOT_FOUND)
+		{
+			cout << "compiler not found!" << endl;
 		}
 	};
 
@@ -227,8 +236,8 @@ struct CudaModularProgram{
 		cu_checked(cuLinkCreate(numOptions, options.data(), optionVals.data(), &linkState));
 
 		for(auto module : modules){
-			cu_checked(cuLinkAddData(linkState, CU_JIT_INPUT_NVVM,
-				module->nvvm, module->nvvmSize, module->name.c_str(),
+			cu_checked(cuLinkAddData(linkState, CU_JIT_INPUT_PTX,
+				module->ptx, module->ptxSize, module->name.c_str(),
 				0, 0, 0));
 		}
 

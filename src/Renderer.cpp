@@ -237,7 +237,7 @@ void Renderer::loop(function<void(void)> update, function<void(void)> render){
 	vector<float> frameTimes(1000, 0);
 	//float frameTimesArray[1000];
 
-	while (!glfwWindowShouldClose(window)){
+	// while (!glfwWindowShouldClose(window)){
 
 		GLTimerQueries::frameStart();
 
@@ -418,14 +418,14 @@ void Renderer::loop(function<void(void)> update, function<void(void)> render){
 			// ImPlot::SetNextPlotLimitsY(0, 30, ImGuiCond_Always);
 			ImPlot::SetNextAxesLimits(t - history, t, 0, 30, ImGuiCond_Always);
 
-			if (ImPlot::BeginPlot("Timings", nullptr, nullptr, ImVec2(-1, 200))){
+			if (ImPlot::BeginPlot("Timings", ImVec2(-1, 200))){
 
 				auto x = &sFrames.Data[0].x;
 				auto y = &sFrames.Data[0].y;
-				ImPlot::PlotShaded("frame time(ms)", x, y, sFrames.Data.size(), -Infinity, sFrames.Offset, 2 * sizeof(float));
-
-				ImPlot::PlotLine("16.6ms (60 FPS)", &s60fps.Data[0].x, &s60fps.Data[0].y, s60fps.Data.size(), s60fps.Offset, 2 * sizeof(float));
-				ImPlot::PlotLine(" 8.3ms (120 FPS)", &s120fps.Data[0].x, &s120fps.Data[0].y, s120fps.Data.size(), s120fps.Offset, 2 * sizeof(float));
+				// ImPlot::PlotShaded("frame time(ms)", x, y, sFrames.Data.size(), -Infinity, sFrames.Offset, 2 * sizeof(float));
+				//
+				// ImPlot::PlotLine("16.6ms (60 FPS)", &s60fps.Data[0].x, &s60fps.Data[0].y, s60fps.Data.size(), s60fps.Offset, 2 * sizeof(float));
+				// ImPlot::PlotLine(" 8.3ms (120 FPS)", &s120fps.Data[0].x, &s120fps.Data[0].y, s120fps.Data.size(), s120fps.Offset, 2 * sizeof(float));
 
 				ImPlot::EndPlot();
 			}
@@ -745,7 +745,7 @@ void Renderer::loop(function<void(void)> update, function<void(void)> render){
 
 		fpsCounter++;
 		frameCount++;
-	}
+	// }
 
 	ImPlot::DestroyContext();
 	ImGui::DestroyContext();
